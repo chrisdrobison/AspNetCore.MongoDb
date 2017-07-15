@@ -8,6 +8,7 @@
     <Description>MongoDB storage support as key store.</Description>
     <AssemblyName>AspNetCore.DataProtection.MongoDb</AssemblyName>
     <RootNamespace>AspNetCore.DataProtection.MongoDb</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
