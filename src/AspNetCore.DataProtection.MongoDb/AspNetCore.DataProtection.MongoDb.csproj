@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>chrisdrobison</Authors>
+    <Company />
+    <Description>MongoDB storage support as key store.</Description>
+    <AssemblyName>AspNetCore.DataProtection.MongoDb</AssemblyName>
+    <RootNamespace>AspNetCore.DataProtection.MongoDb</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="1.1.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
+  </ItemGroup>
+
+</Project>
