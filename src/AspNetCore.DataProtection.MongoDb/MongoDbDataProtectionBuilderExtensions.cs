@@ -1,7 +1,9 @@
 ﻿using System;
 using AspNetCore.DataProtection.MongoDb;
 using Microsoft.AspNetCore.DataProtection.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
 // ReSharper disable once CheckNamespace
@@ -19,7 +21,8 @@ namespace Microsoft.AspNetCore.DataProtection
                 throw new ArgumentNullException(nameof(builder));
             if (databaseFactory == null)
                 throw new ArgumentNullException(nameof(databaseFactory));
-            builder.Services.TryAddSingleton<IXmlRepository>(provider => new MongoDbXmlRepository(databaseFactory, collectionName));
+            builder.Services.TryAddSingleton<IXmlRepository>(provider => new MongoDbXmlRepository(databaseFactory,
+                collectionName, provider.GetService<ILogger<MongoDbXmlRepository>>()));
             return builder;
         }
     }
