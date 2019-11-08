@@ -12,11 +12,17 @@ name: 2.3.$(BuildID)
 steps:
 - checkout: self
   clean: true
-- script: dotnet pack ./src/AspNetCore.DataProtection.MongoDb/AspNetCore.DataProtection.MongoDb.csproj -c Release -o ./dist -p:PackageVersion=$(Build.BuildNumber)
-  displayName: Build
-- script: dotnet pack ./src/AspNetCore.Authentication.Cookies.MongoDb/AspNetCore.Authentication.Cookies.MongoDb.csproj -c Release -o ./dist -p:PackageVersion=$(Build.BuildNumber)
-  displayName: Build
+- task: DotNetCoreCLI@2
+  displayName: Build/Pack
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    configuration: 'Release'
+    includesymbols: true
+    includesource: true
+    versioningScheme: 'byBuildNumber'
 - task: NuGetCommand@2
+  displayName: Publish
   inputs:
     command: push
     feedsToUse: 'config'
