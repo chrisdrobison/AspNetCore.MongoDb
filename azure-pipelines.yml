@@ -22,8 +22,9 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: 'src/**/*.csproj'
     configuration: 'Release'
+    nobuild: true
     includesymbols: true
     includesource: true
     versioningScheme: 'byBuildNumber'
