@@ -13,7 +13,12 @@ steps:
 - checkout: self
   clean: true
 - task: DotNetCoreCLI@2
-  displayName: Build/Pack
+  inputs:
+    command: 'build'
+    projects: 'AspNetCore.MongoDb.sln'
+    arguments: '-c Release -p:PackageVersion=$(Build.BuildNumber)'
+- task: DotNetCoreCLI@2
+  displayName: Pack
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
