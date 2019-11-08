@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.DataProtection.MongoDb", "src\AspNetCore.DataProtection.MongoDb\AspNetCore.DataProtection.MongoDb.csproj", "{97B38000-57B1-4F7B-886C-1900064AA70A}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F1EACE76-A2C7-4290-8122-115F7F275124}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.DataProtection.MongoDb.Tests", "tests\AspNetCore.DataProtection.MongoDb.Tests\AspNetCore.DataProtection.MongoDb.Tests.csproj", "{ED0A26E7-A259-42EF-998B-AA061FDDA294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Authentication.Cookies.MongoDb", "src\AspNetCore.Authentication.Cookies.MongoDb\AspNetCore.Authentication.Cookies.MongoDb.csproj", "{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{ED0A26E7-A259-42EF-998B-AA061FDDA294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0A26E7-A259-42EF-998B-AA061FDDA294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0A26E7-A259-42EF-998B-AA061FDDA294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{97B38000-57B1-4F7B-886C-1900064AA70A} = {5AE60ED8-74CB-48CC-B39E-2824EDF1AEC9}
 		{ED0A26E7-A259-42EF-998B-AA061FDDA294} = {F1EACE76-A2C7-4290-8122-115F7F275124}
+		{27CA3A2C-8A9F-49D6-B974-ECFFB019F7C0} = {5AE60ED8-74CB-48CC-B39E-2824EDF1AEC9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29156F0F-617C-4897-8879-AECD8E6A7B45}
 	EndGlobalSection
 EndGlobal

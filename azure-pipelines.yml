@@ -1,0 +1,25 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: Build
+
+name: 2.3.$(BuildID)
+
+steps:
+- checkout: self
+  clean: true
+- script: dotnet pack ./src/AspNetCore.DataProtection.MongoDb/AspNetCore.DataProtection.MongoDb.csproj -c Release -o ./dist -p:PackageVersion=$(Build.BuildNumber)
+  displayName: Build
+- script: dotnet pack ./src/AspNetCore.Authentication.Cookies.MongoDb/AspNetCore.Authentication.Cookies.MongoDb.csproj -c Release -o ./dist -p:PackageVersion=$(Build.BuildNumber)
+  displayName: Build
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    feedsToUse: 'config'
+    includeNugetOrg: true
+    publishFeedCredentials: NuGet
+    packagesToPack: dist\*.nupkg
