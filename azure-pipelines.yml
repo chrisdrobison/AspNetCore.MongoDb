@@ -13,6 +13,7 @@ steps:
 - checkout: self
   clean: true
 - task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
     command: 'build'
     projects: 'AspNetCore.MongoDb.sln'
@@ -27,11 +28,10 @@ steps:
     includesource: true
     versioningScheme: 'byBuildNumber'
     verbosityPack: 'Normal'
-- task: NuGetCommand@2
-  displayName: Publish
+- task: DotNetCoreCLI@2
+  displayName: Push
   inputs:
-    command: push
-    feedsToUse: 'config'
-    includeNugetOrg: true
-    publishFeedCredentials: NuGet
-    packagesToPack: dist\*.nupkg
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet'
