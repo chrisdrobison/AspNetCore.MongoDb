@@ -21,6 +21,7 @@ steps:
     includesymbols: true
     includesource: true
     versioningScheme: 'byBuildNumber'
+    verbosityPack: 'Normal'
 - task: NuGetCommand@2
   displayName: Publish
   inputs:
