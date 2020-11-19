@@ -7,7 +7,7 @@ pool:
 variables:
 - group: Build
 
-name: 2.3.$(BuildID)
+name: 5.0.$(BuildID)
 
 steps:
 - checkout: self

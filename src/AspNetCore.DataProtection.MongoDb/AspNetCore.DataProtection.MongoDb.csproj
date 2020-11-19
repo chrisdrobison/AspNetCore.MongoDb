@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Version>2.2.0</Version>
     <Authors>chrisdrobison</Authors>
     <Company />
@@ -11,11 +11,12 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</RepositoryUrl>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.2.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.9.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.0" />
   </ItemGroup>
 
 </Project>

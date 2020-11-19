@@ -20,7 +20,7 @@ namespace AspNetCore.Authentication.Cookies.MongoDb
 
         public async Task<string> StoreAsync(AuthenticationTicket ticket)
         {
-            var userId = ticket.Principal.Identity.Name;
+            var userId = ticket.Principal.Identity?.Name;
             if (!string.IsNullOrEmpty(_options.NameClaimType))
             {
                 userId = ticket.Principal.FindFirst(_options.NameClaimType)?.Value;
