@@ -10,7 +10,7 @@ variables:
 - name: minor
   value: 0
 - name: rev
-  value: $[counter("$(major).$(minor)", 0)]
+  value: $[counter(format("{0}.{1}", variables["major"], variables["minor"]), 0)]
 - group: Build
 
 name: $(major).$(minor).$(rev)
