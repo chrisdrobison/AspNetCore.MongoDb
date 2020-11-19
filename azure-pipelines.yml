@@ -5,9 +5,15 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+- name: major
+  value: 5
+- name: minor
+  value: 0
+- name: rev
+  value: $[counter("$(major).$(minor)", 0)]
 - group: Build
 
-name: 5.0.$(BuildID)
+name: $(major).$(minor).$(rev)
 
 steps:
 - checkout: self
