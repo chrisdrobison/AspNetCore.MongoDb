@@ -12,6 +12,7 @@
     <PackageProjectUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</RepositoryUrl>
     <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
