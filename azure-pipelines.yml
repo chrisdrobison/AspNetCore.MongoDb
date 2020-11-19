@@ -18,6 +18,10 @@ name: $(major).$(minor).$(rev)
 steps:
 - checkout: self
   clean: true
+- task: UseDotNet@2
+  inputs:
+    version: '5.0.x'
+    includePreviewVersions: false
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
