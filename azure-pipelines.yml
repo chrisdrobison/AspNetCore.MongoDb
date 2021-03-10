@@ -41,6 +41,7 @@ steps:
     verbosityPack: 'Normal'
 - task: NuGetCommand@2
   displayName: Push
+  condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'

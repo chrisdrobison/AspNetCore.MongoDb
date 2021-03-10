@@ -6,6 +6,7 @@
     <Description>Implementation of ITicketStore using MongoDB</Description>
     <PackageProjectUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
