@@ -4,13 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
     <Version>2.2.0</Version>
     <Authors>chrisdrobison</Authors>
-    <Company />
     <Description>MongoDB storage support as data protection key store.</Description>
     <AssemblyName>AspNetCore.DataProtection.MongoDb</AssemblyName>
     <RootNamespace>AspNetCore.DataProtection.MongoDb</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
