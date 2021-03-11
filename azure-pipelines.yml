@@ -35,6 +35,7 @@ steps:
     arguments: '-c Release -p:PackageVersion=$(Build.BuildNumber)'
 - task: DotNetCoreCLI@2
   displayName: Pack
+  condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
   inputs:
     command: 'pack'
     packagesToPack: 'src/**/*.csproj'
