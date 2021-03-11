@@ -11,12 +11,14 @@ variables:
   value: 0
 - name: revCounter
   value: $[counter(format('{0}.{1}-{2}', variables['major'], variables['minor'], variables['build.sourceBranchName']), 0)]
+- name: rev
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    value: $[format('.{0}', variables['revCounter'])]
+  ${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
+    value: $[format('-{0}{1}', variables['build.sourceBranchName'], variables['revCounter'])]
 - group: Build
 
-${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
-  name: $(major).$(minor).$(rev)
-${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
-  name: $(major).$(minor)-$(Build.SourceBranchName)$(rev)
+name: $(major).$(minor)$(rev)
 
 steps:
 - checkout: self
