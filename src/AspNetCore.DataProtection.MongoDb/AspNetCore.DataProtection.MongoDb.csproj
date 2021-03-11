@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;</TargetFrameworks>
     <Version>2.2.0</Version>
     <Authors>chrisdrobison</Authors>
     <Description>MongoDB storage support as data protection key store.</Description>
@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="3.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.11.0" />
   </ItemGroup>
 

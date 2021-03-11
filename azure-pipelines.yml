@@ -6,14 +6,17 @@ pool:
 
 variables:
 - name: major
-  value: 5
+  value: 6
 - name: minor
   value: 0
 - name: rev
-  value: $[counter(format('{0}.{1}', variables['major'], variables['minor']), 0)]
+  value: $[counter(format('{0}.{1}-{2}', variables['major'], variables['minor'], variables['build.sourceBranchName']), 0)]
 - group: Build
 
+${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
 name: $(major).$(minor).$(rev)
+${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
+name: $(major).$(minor)-$(Build.SourceBranchName)$(rev)
 
 steps:
 - checkout: self
