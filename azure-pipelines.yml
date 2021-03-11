@@ -9,14 +9,14 @@ variables:
   value: 6
 - name: minor
   value: 0
-- name: rev
+- name: revCounter
   value: $[counter(format('{0}.{1}-{2}', variables['major'], variables['minor'], variables['build.sourceBranchName']), 0)]
 - group: Build
 
 ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
-name: $(major).$(minor).$(rev)
+  name: $(major).$(minor).$(rev)
 ${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
-name: $(major).$(minor)-$(Build.SourceBranchName)$(rev)
+  name: $(major).$(minor)-$(Build.SourceBranchName)$(rev)
 
 steps:
 - checkout: self
