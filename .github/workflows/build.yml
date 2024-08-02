@@ -26,11 +26,8 @@ jobs:
       - name: Build
         run: dotnet build -c Release
         
-      - name: Create packages
-        run: dotnet pack -c Release
-        
       - name: Publish the package to nuget.org
         if: github.ref == 'refs/heads/master'
-        run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "**/*.nupkg" -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.NUGET_APIKEY }}

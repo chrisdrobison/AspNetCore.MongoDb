@@ -4,16 +4,24 @@
     <TargetFramework>net8.0</TargetFramework>
     <Version>7.0.0</Version>
     <Authors>chrisdrobison</Authors>
+    <AssemblyName>AspNetCore.Authentication.Cookies.MongoDb</AssemblyName>
+    <RootNamespace>AspNetCore.Authentication.Cookies.MongoDb</RootNamespace>
     <Description>Implementation of ITicketStore using MongoDB</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisdrobison/AspNetCore.MongoDb</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.28.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="readme.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
