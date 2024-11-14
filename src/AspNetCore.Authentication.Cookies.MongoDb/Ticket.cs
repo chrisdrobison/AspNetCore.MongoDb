@@ -8,6 +8,7 @@ namespace AspNetCore.Authentication.Cookies.MongoDb
     internal class Ticket
     {
         [BsonId(IdGenerator = typeof(CombGuidGenerator))]
+        [BsonRepresentation(BsonType.String)]
         public Guid Id { get; set; }
 
         public string UserId { get; set; }

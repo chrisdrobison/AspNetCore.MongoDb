@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>8.0.0</Version>
+    <Version>8.0.1</Version>
     <Authors>chrisdrobison</Authors>
     <AssemblyName>AspNetCore.Authentication.Cookies.MongoDb</AssemblyName>
     <RootNamespace>AspNetCore.Authentication.Cookies.MongoDb</RootNamespace>
